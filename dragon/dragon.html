@@ -13,11 +13,13 @@
 
 
 <div id="game-wrapper">
-	<div class="text-center"><img src="dragon-assets/dragon.png"></div>
+	<div class="text-center"><img src="./dragon-assets/dragon.png" name="dragonImage"></div>
 	<div id="message" class="text-center">You have encountered a dragon. Do you fight?
 	</div>
+	<div id="health">dragonScore</div>
 	<div class="text-center">
 		<button class="btn btn-default" onclick="rollDice();">Fight!</button>
+		<button class="btn btn-default" onclick="flee();"> Flee!</button>
 	</div>
 	<div class="text-center">
 		<img src="dragon-assets/d1.gif" name="die1Image">
@@ -27,34 +29,51 @@
 </div>
 
 <script type="text/javascript">
-	function rollDice() {
-		// console.log("The user clicked the Fight button");
-		var randomDie1 = Math.ceil(Math.random() * 6);
-		var randomDie2 = Math.ceil(Math.random() * 6);
-		console.log(randomDie1);
-		console.log(randomDie2);
+var randomDie1 = Math.ceil(Math.random() * 6);
+var randomDie2 = Math.ceil(Math.random() * 6);
+var heroScore = 20;
+var dragonScore = 20;
+// Hero Roll Dice //
 
-		var die1 = "dragon-assets/d" + randomDie1 + ".gif"
-		var die2 = "dragon-assets/d" + randomDie2 + ".gif"
+
+	function rollDice() {
+
+
+		var die1 = "dragon-assets/d" + randomDie1 + ".gif";
+		var die2 = "dragon-assets/d" + randomDie2 + ".gif";
 		document.images.die1Image.src = die1;
 		document.images.die2Image.src = die2;
 
-		if(randomDie1 + randomDie2 > 8) {
-			document.images.dragonImage.src= "https://s-media-cache-ak0.pinimg.com/originals/e3/41/ed/e341eddb5e2ab3b979adb9f5a0cf2688.jpg";
-			document.getElementbyId('message').innerHTML = "You have defeated the dragon";
-		}
-		else {
-			document.images.dragonImage.src = "https://i.ytimg.com/vi/votpmwC25Ek/hqdefault.jpg";
-		}
+
+
+
+
+// Fate of Dragon //
+	if(randomDie1 + randomDie2 > 8) {
+		document.images.dragonImage.src = "http://vignette3.wikia.nocookie.net/reign-of-fire/images/8/82/A_deleted_scene_showing_the_disassembled_dead_Dragon..jpg/revision/latest?cb=20130813082231";
+		document.getElementById('message').innerHTML = "You have defeated the dragon";
+
+	} 
+	else {
+		document.images.dragonImage.src = "https://i.ytimg.com/vi/votpmwC25Ek/hqdefault.jpg";
+		document.getElementById('message').innerHTML = "You are toast";
+	}
 		
+	}
+// Flee Button 
+
+	function flee () {
+		document.images.dragonImage.src= "https://vignette3.wikia.nocookie.net/hanna-barbera/images/d/d0/Courage-the-cowardly-dog_20883_1.jpg/revision/latest?cb=20110508124217";
+		document.getElementById('message').innerHTML = "You coward! Stop running away!";
 	}
 
 
-
-
-
-
-
+			// while (dragonScore > 1) {
+			// 	if(randomDie1 + randomDie2 > 8) {
+			// 		dragonScore = dragonScore - 5;
+			// 		console.log(dragonScore);
+			// 	} 
+			// }
 
 
 
