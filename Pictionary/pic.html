@@ -6,13 +6,21 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 	<link rel="stylesheet" type="text/css" href="styles.css">
+	<div id='counter'></div>
+
 
 
 
 </head>
 <body>
 
-<h1>Sanity Check</h1>
+<h1>Ball Clicked<span id="click-count"></span></h1>
+
+<div id="toolbar">
+	<label> Choose your ball color</label>
+	<input type="color" id="color-picker"/>
+
+</div>
 
 	<canvas id="canvas" width="500px" height="500px"></canvas>
 	<script type="text/javascript" src="scripts.js"></script>

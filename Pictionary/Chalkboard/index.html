@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<!-- 	<link rel="stylesheet" typetext="text/css" href="styles.css"> -->
+	<style type="text/css" media="screen">
+		canvas {
+			border: 10px solid white;
+			background-color: #006600;
+			margin-left: 550px;
+			
+		}
+
+		body {
+			margin:0px;
+			background-color: #006600;
+			background-position: center;
+			border: 10px solid #994d00;
+			padding: 50px;
+		}
+
+		#toolbar {
+			margin-left: 550px;
+			padding-bottom: 10px;
+			color:white;
+		}
+
+		#chalkWriting {
+			display: inline-block;
+			line-height: 300px;
+		}
+
+	</style>
+</head>
+<body>
+
+<div id="toolbar">
+	<label> Choose your marker color</label>
+	<input type="color" id="color-picker"/>
+	<label>Choose your marker thickness</label>
+	<input type="number" id="thickness" value= "10"/>
+</div>
+
+<div id="chalkWriting">
+	Let's Play Pictionary!
+	Draw in the middle
+	<----
+</div>
+
+<canvas id="canvas" height="600px" width="600px">
+
+</canvas>
+
+
+
+<script type="text/javascript" src="scripts.js"></script>
+</body>
+</html>

@@ -23,6 +23,11 @@ var y= 200;
 var r= 50;
 var xDirection = 1;
 var yDirection = 1;
+var colorPicker = document.getElementById('color-picker');
+
+// var myBall= document.getElementById('myBall')
+
+
 
 function drawBall(){
 	context.fillStyle = "#FF0000";
@@ -38,9 +43,32 @@ function drawBall(){
 		yDirection = -yDirection;
 	}
 
+	// var randomX = Math.random() * 4
+	// var randomY = Math.random() * 4
+	// x += randomX * xDirection;
+	// Y += randomY * yDirection;
+	// red += 1;
+	// blue +=1;
+	// green +=1;
+
 	x += 4 * xDirection;
 	y += 1 * yDirection;
 
 }
 
-var ball = setInterval(drawBall, 20);
+var clicks = 0;
+
+var timer = setInterval(drawBall, 20);
+
+canvas.addEventListener("click", function (event){
+	clicks += 1;
+	document.getElementById('counter').innerHTML = "Clicks " +clicks;
+	console.log(clicks);
+
+colorPicker.addEventListener('change', function(event){
+	console.dir(event.target)
+	color = colorPicker.value
+	console.log(color);
+})
+
+})
