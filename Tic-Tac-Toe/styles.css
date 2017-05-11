@@ -27,3 +27,7 @@ h1{
 
 }
 
+.winning-square {
+	background-color: magenta !important;
+	color: red !important;
+}
